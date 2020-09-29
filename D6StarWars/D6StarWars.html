@@ -237,6 +237,7 @@
 											<button name="roll_dexskill_n" class="d6-dice rollmod-no"  type="roll" value="&{template:blue} {{name=@{dexskillname}}} {{Roll=[[(@{dexskilldice} -@{WoundMod} +@{Force_Up} -1)d6cf0cs7 + @{dexskillpip} + 1d6@{wilddie}]]}}"></button>
 											<button name="roll_dexskill_n-w" class="d6-dice rollmod-no gmroll gmroll-hide"  type="roll" value="/w gm &{template:blue} {{name=@{dexskillname}}} {{Roll=[[(@{dexskilldice} -@{WoundMod} +@{Force_Up} -1)d6cf0cs7 + @{dexskillpip} + 1d6@{wilddie}]]}}"><span class="redtxt">GM</span></button>
 												<input class="skilltext" type="text" name="attr_dexskillname"/>
+												<input name="attr_dexskillused" type="checkbox"/>
 												<div class="right">
 												<input type="number" name="attr_dexskilldice" class="smallnumber shortnumber" min="1" value="3"/>D+<input type="number" name="attr_dexskillpip" class="pipnumber shortnumber" min="0" max="2" value="0"/>
 												</div>
@@ -263,6 +264,7 @@
 											<button name="knowskill_n"class="d6-dice rollmod-no"  type="roll" value="&{template:blue} {{name=@{knowskillname}}} {{Roll=[[(@{knowskilldice} -@{WoundMod} +@{Force_Up} -1)d6cf0cs7 + @{knowskillpip} + 1d6@{wilddie}]]}}"></button>
 											<button name="knowskill_n-w"class="d6-dice rollmod-no gmroll gmroll-hide"  type="roll" value="/w gm &{template:blue} {{name=@{knowskillname}}} {{Roll=[[(@{knowskilldice} -@{WoundMod} +@{Force_Up} -1)d6cf0cs7 + @{knowskillpip}+ 1d6@{wilddie}]]}}"><span class="redtxt">GM</span></button>
 											<input class="skilltext" type="text" name="attr_knowskillname"/>
+											<input name="attr_knowskillused" type="checkbox"/>
 											<div class="right">
 												<input type="number" name="attr_knowskilldice" class="smallnumber shortnumber" min="1" value="3"/>D+<input type="number" name="attr_knowskillpip" class="pipnumber shortnumber" min="0" max="2" value="0"/>
 											</div>
@@ -289,6 +291,7 @@
 											<button name="roll_mechskill_n" class="d6-dice rollmod-no"  type="roll" value="&{template:blue} {{name=@{mechskillname}}} {{Roll=[[(@{mechskilldice} -@{WoundMod} +@{Force_Up}-1)d6cf0cs7 + @{mechskillpip} + 1d6@{wilddie}]]}}"></button>
 											<button name="roll_mechskill_n-w" class="d6-dice rollmod-no gmroll gmroll-hide"  type="roll" value="/w gm &{template:blue} {{name=@{mechskillname}}} {{Roll=[[(@{mechskilldice} -@{WoundMod} +@{Force_Up} -1)d6cf0cs7 + @{mechskillpip} + 1d6@{wilddie}]]}}"><span class="redtxt">GM</span></button>
 											<input class="skilltext" type="text" name="attr_mechskillname"/>
+											<input name="attr_mechskillused" type="checkbox"/>
 											<div class="right">
 												<input type="number" name="attr_mechskilldice" class="smallnumber shortnumber" min="1" value="3"/>D+<input type="number" name="attr_mechskillpip" class="pipnumber shortnumber" min="0" max="2" value="0"/>
 											</div>
@@ -319,6 +322,7 @@
 										<button name="roll_perskill_n" class="d6-dice rollmod-no"  type="roll" value="&{template:blue} {{name=@{perckillname}}} {{Roll=[[(@{perckilldice} -@{WoundMod} +@{Force_Up} -1)d6cf0cs7 + @{perckillpip} + 1d6@{wilddie}]]}}"></button>
 										<button name="roll_perskill_n-w" class="d6-dice rollmod-no gmroll gmroll-hide"  type="roll" value="/w gm &{template:blue} {{name=@{perckillname}}} {{Roll=[[(@{perckilldice} -@{WoundMod} +@{Force_Up} -1)d6cf0cs7 + @{perckillpip} + 1d6@{wilddie}]]}}"><span class="redtxt">GM</span></button>
 											<input class="skilltext" type="text" name="attr_perckillname"/> <!-- Misspelled attr name iis to be left as it is, otherwise it wipes char sheets from perseption skills-->
+											<input name="attr_perskillused" type="checkbox"/>
 											<div class="right">
 											<input type="number" name="attr_perckilldice" class="smallnumber shortnumber" min="1" value="3"/>D+<input type="number" name="attr_perckillpip" class="pipnumber shortnumber" min="0" max="2" value="0"/>
 											</div>
@@ -345,6 +349,7 @@
 										<button name="roll_strskill_n" class="d6-dice rollmod-no" type="roll" value="&{template:blue} {{name=@{strskillname}}} {{Roll=[[(@{strskilldice} -@{WoundMod} +@{Force_Up}-1)d6cf0cs7 + @{strskillpip} + 1d6@{wilddie}]]}}"></button>
 										<button name="roll_strskill_n-w" class="d6-dice rollmod-no gmroll gmroll-hide" type="roll" value="/w gm &{template:blue} {{name=@{strskillname}}} {{Roll=[[(@{strskilldice} -@{WoundMod} +@{Force_Up} -1)d6cf0cs7 + @{strskillpip} + 1d6@{wilddie}]]}}"><span class="redtxt">GM</span></button>
 										  <input class="skilltext" type="text" name="attr_strskillname"/>
+										  <input name="attr_strskillused" type="checkbox"/>
 										  <div class="right">
 											<input type="number" name="attr_strskilldice" class="smallnumber shortnumber" min="1" value="3"/>D+<input type="number" name="attr_strskillpip" class="pipnumber shortnumber" min="0" max="2" value="0"/>
 										  </div>
@@ -371,6 +376,7 @@
 											<button name="roll_techskill_n" class="d6-dice rollmod-no"  type="roll" value="&{template:blue} {{name=@{techskillname}}} {{Roll=[[(@{techskilldice} -@{WoundMod} +@{Force_Up} -1)d6cf0cs7 + @{techskillpip} + 1d6@{wilddie}]]}}"></button>
 											<button name="roll_techskill_n-w" class="d6-dice rollmod-no gmroll gmroll-hide"  type="roll" value="/w gm &{template:blue} {{name=@{techskillname}}} {{Roll=[[(@{techskilldice} -@{WoundMod} +@{Force_Up} -1)d6cf0cs7 + @{techskillpip} + 1d6@{wilddie}]]}}"><span class="redtxt">GM</span></button>
 											  <input class="skilltext" type="text" name="attr_techskillname"/>
+											  <input name="attr_techskillused" type="checkbox"/>
 											  <div class="right">
 												<input type="number" name="attr_techskilldice" class="smallnumber shortnumber" min="1" value="3"/>D+<input type="number" name="attr_techskillpip" class="pipnumber shortnumber" min="0" max="2" value="0"/>
 											  </div>
